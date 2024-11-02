@@ -1,0 +1,496 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+header {
+    height: 100px;
+    position: fixed; /* Muda para 'fixed' para fixar no topo */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    z-index: 1000; /* Coloca o cabeçalho acima de outros elementos */
+    background: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente para destaque */
+    padding: 0 2rem; /* Mantém o padding */
+}
+
+header a {
+    font-family: "Bungee", sans-serif;
+    font-weight: 600;
+    color: #000000;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+}
+
+.links a {
+    font-size: 24px;
+}
+
+.navbar img{
+    width: 75%;
+}
+
+.navbar .links {
+    margin-left: 23%;
+    margin-top: 35px;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 3rem;
+}
+
+.navbar .botao {
+    margin-top: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    z-index: 99;
+
+}
+
+.dropdown {
+    margin-left: 55%;
+    margin-right: 2%;
+    position: relative;
+    width: 200px;
+    top: 80px;
+    height: 290px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.fade { opacity: 0;}
+
+.dropdown li{
+    padding:.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown a{
+    font-size: 18px;
+}
+
+
+@media(max-width: 768px) {
+    .navbar .links {
+        display: none;
+    }
+
+    .navbar .botao {
+        display: block;
+    }
+
+    .dropdown {
+        display: block;
+    }
+
+    .navbar .links {
+        display: none; /* Esconde os links em telas pequenas */
+        flex-direction: column; /* Alinha links em coluna */
+        position: absolute; /* Posiciona o menu */
+        background-color: #f8f9fa; /* Cor de fundo do menu */
+        top: 60px; /* Abaixo do header */
+        right: 0; /* Alinha à direita */
+        width: 100%; /* Largura total */
+        padding: 10px 0; /* Espaçamento interno */
+    }
+
+    .navbar .links.active {
+        display: flex; /* Mostra os links quando ativo */
+    }
+
+    .navbar .botao {
+        display: block; /* Mostra o botão de menu */
+    }
+
+    /* Ajustes de imagem e margem */
+    .navbar img {
+        width: 50%; /* Ajusta a largura da imagem em telas pequenas */
+    }
+}
+
+
+body {
+    height: 445.5vh;
+    background: linear-gradient( #0128b4 35%, #0082ce 70%);
+}
+
+li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: orange;
+}
+
+#bem-vindo {
+    color: #fff;
+    margin-left: 17%;
+    font-size: 55px;
+}
+
+#bem-vindo p {
+    color: #50c8ff;
+}
+
+body h2 {
+    margin-top: 20px;
+    margin-left: 45%;
+    font-size: 45px;
+    color: #fff;
+    font-weight: 100;
+}
+
+#bio {
+    text-align: center;
+    font-size: 60px;
+    color: #fff;
+    margin-left: 5%;
+    margin-top: 14%;
+    font-weight: 800;
+    font-family: "Bungee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#foto{
+    border: solid black;
+    background-color: white;
+    width: 330px;
+    height: 365px;
+    margin-top: 60px;
+}
+
+#foto img {
+    width: 300px;
+    height: 350px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+#text-bio {
+    color: white;
+    font-size: 28px;
+    margin-top: 6%;
+    margin-left: 4%;
+    font-family: "Bungee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#biografia{
+    display: flex;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+h4 {
+    text-align: center;
+    font-size: 60px;
+    color: #fff;
+    margin-top: 10%;
+    font-weight: 800;
+    font-family: "Bungee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#habilidades {
+    justify-content: center;
+    align-items: center;
+    min-height: 71vh;
+}
+
+#habilidades .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    flex-wrap: wrap;
+    margin-top: 15%;
+}
+
+.container .progress {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    color: #fff;
+    background: #444 linear-gradient(to right, transparent 50%,
+    var(--clr) 0);
+} 
+
+.container .progress h5{
+    position: absolute;
+    top: 50%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    z-index: 1;
+    font-weight: 500;
+}
+
+.container .progress h5 span {
+    font-size: 0.65em;
+    font-weight: 400;
+}
+
+.container .progress h6 {
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    font-size: 18px;
+    transform: translate(-50%);
+    z-index: 1;
+    font-weight: 600;
+    color: var(--clr);
+    text-transform: uppercase;
+}
+
+.container .progress::before{
+    content: '';
+    display: block;
+    height: 100%;
+    margin-left: 50%;
+    transform-origin: left;
+    border-radius: 0 100% 100% 0/50%;
+}
+
+.container .progress::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border-radius: 50%;
+    background: #222;
+}
+
+.container .progress.office::before {
+    background: var(--clr);
+    transform: rotate(calc(((var(--i) - -30) * 0.01turn)));
+}
+
+.container .progress.c::before {
+    background: var(--clr);
+    transform: rotate(calc(((var(--i) - 35) * 0.01turn)));
+}
+
+.container .progress.front::before {
+    background: #444;
+    transform: rotate(calc(((var(--i) - -47 ) * 0.01turn)));
+}
+
+.container .progress.sql::before {
+    background: var(--clr);
+    transform: rotate(calc(((var(--i) - 10) * 0.01turn)));
+}
+.card{
+    align-items: center;
+    text-align: center;
+    margin-left: 3%;
+    background-color: #ffffff;
+}
+
+.posição{
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    margin-left: 6%;
+    margin-top: 12%;
+}
+#card-area{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 700px;
+}
+
+.card-img-top{
+    width: 70%;
+    height: 40%;
+    border-radius: 10px;
+}
+.espaco-card1{
+    margin-top: 10%;
+}
+.card-text{
+    color: white;
+}
+
+section p {
+    font-family: "Bungee", sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.acessar {
+    background-color: #0769a1;
+    width: 200px;
+    height: 60px;
+    margin-left: 29%;
+    margin-top: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+acessar a {
+    font-family: monospace;
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+.card {
+    transition: transform 0.4s ease;
+}
+
+.card:hover {
+    transform: scale(1.12);
+}
+
+#contato {
+    margin-top: 15%;
+}
+
+#circle {
+    background-color: #0149b4;
+    border: black solid 4px;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    margin-left: 45%;
+    margin-top: 10%;
+}
+
+#circle svg {
+    width: 100px;
+    margin-left: 46px;
+    margin-top: 35px;
+}
+
+.forms  {
+    background-color: #0769a1;
+    width: 200px;
+    height: 60px;
+    margin-left: 45%;
+    margin-top: 60px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.forms a {
+    font-family: "Bungee", sans-serif;
+    font-size: 23px;
+}
+
+footer {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.contact-info a {
+    color: #0077b5;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    gap: 25%;
+    display: flex;
+    font-size: 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    margin-top: 4%;
+}
+
+footer p {
+    margin-left: 50px;
+    font-size: 18px;
+    font-family: "Bungee", sans-serif;
+}
+
+footer a {
+    color: #000000; /* Cor padrão dos links */
+    text-decoration: none;
+    font-weight: 600;
+    
+}
+
+footer a:hover {
+    text-decoration: none; /* Efeito ao passar o mouse */
+}
+
+.button {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.github {
+    background-color: #333;
+}
+
+.github:hover {
+    background-color: #555;
+}
+
+.linkedin {
+    background-color: #0077b5;
+}
+
+.linkedin:hover {
+    background-color: #005582;
+}
